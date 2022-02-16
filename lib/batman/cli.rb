@@ -49,7 +49,7 @@ class Batman::CLI
     def show_comics_for(chosen_batman_movie)
         #work on once scraped
         batmanmovies = @batmanmovies[chosen_batman_movie - 1]
-        puts "\n#{@@mag}Here are the comics that made it into #{batmanmovies}#{@@white}"
+        puts "\n#{@@mag}Here are the comics that inspired the plot of #{batmanmovies.titlename}#{@@white}"
         #binding.pry
     end
 end
