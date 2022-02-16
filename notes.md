@@ -1,3 +1,8 @@
+1:33
+1. Start scraping
+2. 
+
+
 CLI.RB
 1. get movie names and whatever helps easily identify it for the user (movie_names_and_identity)
 2. this is the part where the user presses a number to get the movie that corresponds with the number they pressed 
