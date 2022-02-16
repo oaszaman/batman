@@ -11,6 +11,7 @@ class Batman::Titles
     end
 
     def self.all
+        Batman::ScraperForTitles.scrape_imdb_titles if @@all.empty?
         @@all 
     end
 
