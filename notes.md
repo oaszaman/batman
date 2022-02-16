@@ -6,8 +6,9 @@ CLI.RB
 5. if the user wants to know more then put the comics in numbers and they can press whatever number they want to know more about or what part of the movie it was in
 6. exit 
 
+        ✓
 
-1. list_movie_names_and_identity (input myself)
+1. list_movie_names_and_identity (input myself)  ✓
 2. get_user_movie
 3. valid_input
 4. show_comics_that_correspond_with(movie)
