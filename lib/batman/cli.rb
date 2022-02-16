@@ -30,7 +30,9 @@ class Batman::CLI
     def get_user_answer_for_movie
         chosen_batman_movie = gets.strip.to_i
 
-       
+    end
 
+    def valid_input(input, data)
+        input.to_i <= data.length && input.to_i > 0
     end
 end
