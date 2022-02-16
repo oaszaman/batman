@@ -8,7 +8,7 @@ class Batman::CLI
 
     def greeting
         puts "\n#{@@mag}Welcome to the Batman Portal! \nHere you will find out which comics were adapted into live action Batman movies.#{@@white}\n"
-        puts "\n"
+        #puts "\n"
          list_of_movie_names
          show_user_movie
          get_user_answer_for_movie
@@ -17,15 +17,20 @@ class Batman::CLI
     #all the movies i want to display in the terminal and something that easily identifies them (year, director)
     #maybe scrape or just list it
     def list_of_movie_names
+        
         @batmanmovies = Batman::Titles.all
        # @batmanmovies = ["Batman (1966)", "Batman (1989)", "Batman Returns (1992)", "Batman Forever (1995)", "Batman & Robin (1997)", "Batman Begins (2005)", "The Dark Knight (2008)", "The Dark Knight Rises (2012)" ]
+        #Batman::Titles.new("a")
+        #Batman::Titles.new("b")
+        #Batman::Titles.new("c")
     end
 
     #shows second prompt and movie names
     def show_user_movie
-        puts "\nChoose the NUMBER beside the movie name that you will like to select."
+        puts "\nChoose the NUMBER beside the movie name that you will like to select.\n"
+        puts "\n"
         @batmanmovies.each.with_index(1) { |movie, index| 
-        puts "#{index}. #{movie}."}
+        puts "#{index}. #{movie.titlename}"}
             
     end
 

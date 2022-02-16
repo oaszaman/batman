@@ -3,7 +3,7 @@
 require_relative "batman/version"
 require_relative "batman/cli"
 require_relative "batman/comics"
-require_relative "batman/scraper"
+require_relative "batman/ScraperForTitles"
 require_relative "batman/titles"
 
 
