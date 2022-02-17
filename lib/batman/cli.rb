@@ -4,6 +4,7 @@ require 'pry'
 class Batman::CLI
     @@mag="\e[3;35m"
     @@white="\e[0m"
+    @@brownishred="\e[1;31m"
     
 
     def greeting
@@ -29,10 +30,13 @@ class Batman::CLI
 
     #shows second prompt and movie names
     def show_user_movie
-        puts "\nChoose the NUMBER beside the movie name that you will like to select.\n"
+        puts "\n#{@@brownishred}Choose the NUMBER beside the movie name that you will like to select.#{@@white}\n"
         puts "\n"
         @batmanmovies.each.with_index(1) { |movie, index| 
-        puts "#{index}. #{movie.titlename}"}
+        puts "#{index}. #{movie.titlename}" if index < 9
+        
+    }
+        
             
     end
 
