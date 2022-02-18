@@ -15,6 +15,7 @@ class Batman::CLI
          get_user_answer_for_movie
          #option_one
          
+         
     end
     
     def list_of_movie_names
@@ -41,7 +42,8 @@ class Batman::CLI
         show_comics_for(chosen_batman_movie)
 
         if chosen_batman_movie == 1
-            puts "Need to collect data"
+            puts Batman::Comics.all
+            
         elsif chosen_batman_movie == 2
             puts "
             The Dark Knight Returns*
@@ -54,8 +56,11 @@ class Batman::CLI
             Batman #408"
         else puts "need some more "
         end
+        
 
     end
+
+
 
     def valid_input(input, data)
         input.to_i <= data.length && input.to_i > 0
