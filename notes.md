@@ -105,3 +105,13 @@ COMIC.RB
 
 SCRAPER.RB
 
+
+throwaway code 
+
+def show_comics_for(chosen_batman_movie)  
+        
+        batmanmovies = @batmanmovies[chosen_batman_movie - 1] 
+        puts "\n#{@@mag}Here are the comics that inspired the plot of #{batmanmovies.titlename}#{@@white}"
+        
+        
+    end

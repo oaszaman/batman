@@ -13,8 +13,8 @@ class Batman::CLI
          list_of_movie_names
          show_user_movie
          get_user_answer_for_movie
-        # show_user_description
-
+         second_prompt
+         
     end
     
     #gets the list of movies from scraper
@@ -40,7 +40,11 @@ class Batman::CLI
         chosen_batman_movie = gets.strip.to_i 
         show_comics_for(chosen_batman_movie)
 
-        
+        if chosen_batman_movie == 1
+            puts list_comics_for_optionone
+        else puts "bye"
+        end
+
     end
 
 
@@ -49,42 +53,48 @@ class Batman::CLI
         
     end
 
-
     def show_comics_for(chosen_batman_movie)  
         
         batmanmovies = @batmanmovies[chosen_batman_movie - 1] 
         puts "\n#{@@mag}Here are the comics that inspired the plot of #{batmanmovies.titlename}#{@@white}"
-        #PROBLEM !!! make index be shows here instead of under
-        #second prompt 
-        #if chosen_batman_movie == 1
-       #     puts @optionone = Batman::Comics1966.all 
-       # @optionone.each.with_index(1) { |comic, index| 
-       # puts "#{index}. #{comic}" }
-       # puts "\n"
-       # else puts "need some more "
-       # end
-        
-        
+
+       
+
     end
 
-    #def show_user_description
-    #    puts "\n#{@@mag}Press the corresponding NUMBER to learn more about the comic.#{@@white}\n "
-        #@optionone = Batman::Comics1966.all 
-        #@optionone.each.with_index(1) { |comic, index| 
-       # puts "#{index}. #{comic}" }
-       # puts "\n"
-
-    #end
-
-   # def chosen_number_for(batman_comic)
-        #chosen_batman_movie = gets.strip.to_i 
-        #show_comics_for(chosen_batman_movie)
-
-    #    chosen_comic = gets.strip.to_i
+#######################################################################
 
 
+    def list_comics_for_optionone
+        @optionone = Batman::Comics1966.all
 
-    #end
+        show_user_comics_for_optionone
+    end
+
+    def show_user_comics_for_optionone
+        
+
+        puts "\n"
+        @optionone.each.with_index(1) { |comic, index| 
+        puts "#{index}. #{comic}" }
+        puts "\n"  
+ 
+
+    end
+
+    def second_prompt
+        puts "\n#{@@mag}If you would like to know more about the comics, press the corresponding number with the comic.#{@@white}\n"
+
+        #list_comics_for_optionone
+       # show_user_comics_for_optionone
+
+    end
+
+
+
+    
+
+    
     
     
 end
