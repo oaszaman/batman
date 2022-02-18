@@ -5,7 +5,7 @@ class Batman::ScraperForTitles
         
         doc = Nokogiri::HTML(URI.open("https://www.esquire.com/entertainment/movies/a38982310/batman-movies-in-order/"))
         title = doc.css("strong")
-
+        
         title.each do |t|
             
             name = t.text

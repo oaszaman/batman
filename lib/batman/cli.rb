@@ -13,7 +13,7 @@ class Batman::CLI
          list_of_movie_names
          show_user_movie
          get_user_answer_for_movie
-         second_prompt
+         get_user_answer_for_comic
          
     end
     
@@ -40,9 +40,6 @@ class Batman::CLI
         chosen_batman_movie = gets.strip.to_i 
         show_comics_for(chosen_batman_movie)
 
-        #### problem ######
-        
-
     end
 
 
@@ -52,7 +49,6 @@ class Batman::CLI
     end
 
     def show_comics_for(chosen_batman_movie)  
-        
         batmanmovies = @batmanmovies[chosen_batman_movie - 1] 
         puts "\n#{@@mag}Here are the comics that inspired the plot of #{batmanmovies.titlename}#{@@white}"
         puts "\n"
@@ -83,16 +79,13 @@ class Batman::CLI
 
 #######################################################################
 
-
     def list_comics_for_optionone
-        @optionone = Batman::Comics1966.all
-
+       @optionone = Batman::Comics1966.all
         show_user_comics_for_optionone
+
     end
 
     def show_user_comics_for_optionone
-        
-
         puts "\n"
         @optionone.each.with_index(1) { |comic, index| 
         puts "#{index}. #{comic}" }
@@ -100,15 +93,24 @@ class Batman::CLI
 
     end
 
-    def second_prompt
-        puts "\n#{@@mag}If you would like to know more about the comics, press the corresponding number with the comic.#{@@white}\n"
+    
 
-        #list_comics_for_optionone
-       # show_user_comics_for_optionone
+    def get_user_answer_for_comic
+        puts "\n#{@@mag}If you would like to learn more, choose the corresponding NUMBER with the comic.#{@@white}\n"
+        chosen_batman_comic = gets.strip.to_i 
+        show_desc_for(chosen_batman_comic)
 
     end
 
-    def get_user_answer_for_comic
+    def valid_input(input, data)
+        input.to_i <= data.length && input.to_i > 0
+        
+    end
+
+
+
+    def show_desc_for(chosen_batman_comic)
+        puts "hello"
 
     end
 
