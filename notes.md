@@ -1,10 +1,5 @@
-iDEA 
-
-- If comic = 1..9 puts "here are the comics..."
-else "try again"
-
-Problems
-1. Only want valid numbers to show in terminal (hidden titles are being shown)
+1. Instead of scraping comic titles, just scrape description of the comics. Manually input the comic names 
+2. "To know more press the corresponding number with the comic you would like to know more about"
 
 
 Show Comics For Each Movie

@@ -13,53 +13,35 @@ class Batman::CLI
          list_of_movie_names
          show_user_movie
          get_user_answer_for_movie
-         #option_one
-         
-         
+        # show_user_description
+
     end
     
+    #gets the list of movies from scraper
     def list_of_movie_names
 
         @batmanmovies = Batman::Titles.all
-       # @batmanmovies = ["Batman (1966)", "Batman (1989)", "Batman Returns (1992)", "Batman Forever (1995)", "Batman & Robin (1997)", "Batman Begins (2005)", "The Dark Knight (2008)", "The Dark Knight Rises (2012)" ]
 
     end
 
-    #shows second prompt and movie names
+    #lists movies 1-8 with correct index
     def show_user_movie
         puts "\n"
         @batmanmovies.each.with_index(1) { |movie, index| 
         puts "#{index}. #{movie.titlename}" if index < 9 }
         puts "\n"  
         
-        #puts "\n#{@@brownishred}Choose the NUMBER beside the movie name that you will like to select.#{@@white}\n"
-        
     end
 
+    #shows second prompt and movie names, also gets answer from
+    #user.
     def get_user_answer_for_movie
         puts "\n#{@@brownishred}Choose the NUMBER beside the movie name that you will like to select.#{@@white}\n"
         chosen_batman_movie = gets.strip.to_i 
         show_comics_for(chosen_batman_movie)
 
-        if chosen_batman_movie == 1
-            puts Batman::Comics.all
-            
-        elsif chosen_batman_movie == 2
-            puts "
-            The Dark Knight Returns*
-            Batman: Strange Apparitions
-            The Golden Age Batman
-            Batman #1
-            Batman #213
-            Detective Comics #553
-            Batman #321 & Detective Comics #62
-            Batman #408"
-        else puts "need some more "
-        end
         
-
     end
-
 
 
     def valid_input(input, data)
@@ -72,13 +54,37 @@ class Batman::CLI
         
         batmanmovies = @batmanmovies[chosen_batman_movie - 1] 
         puts "\n#{@@mag}Here are the comics that inspired the plot of #{batmanmovies.titlename}#{@@white}"
+        #PROBLEM !!! make index be shows here instead of under
+        #second prompt 
+        #if chosen_batman_movie == 1
+       #     puts @optionone = Batman::Comics1966.all 
+       # @optionone.each.with_index(1) { |comic, index| 
+       # puts "#{index}. #{comic}" }
+       # puts "\n"
+       # else puts "need some more "
+       # end
         
         
     end
 
-    def option_one
-        
-    end
+    #def show_user_description
+    #    puts "\n#{@@mag}Press the corresponding NUMBER to learn more about the comic.#{@@white}\n "
+        #@optionone = Batman::Comics1966.all 
+        #@optionone.each.with_index(1) { |comic, index| 
+       # puts "#{index}. #{comic}" }
+       # puts "\n"
 
+    #end
+
+   # def chosen_number_for(batman_comic)
+        #chosen_batman_movie = gets.strip.to_i 
+        #show_comics_for(chosen_batman_movie)
+
+    #    chosen_comic = gets.strip.to_i
+
+
+
+    #end
+    
     
 end

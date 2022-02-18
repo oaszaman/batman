@@ -1,7 +1,7 @@
-class Batman::Comics
+class Batman::Comics1966
 
     #@@all = []
-    @@all = ["a", "b", "c"]
+    @@all = ["Contemporary Batman Comics Of The 1960s"]
     
     attr_accessor :comicname
 
@@ -11,7 +11,6 @@ class Batman::Comics
     end
 
     def self.all
-        #Batman::ScraperForTitles.scrape_imdb_titles if @@all.empty?
         @@all 
     end
 
