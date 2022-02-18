@@ -40,10 +40,8 @@ class Batman::CLI
         chosen_batman_movie = gets.strip.to_i 
         show_comics_for(chosen_batman_movie)
 
-        if chosen_batman_movie == 1
-            puts list_comics_for_optionone
-        else puts "bye"
-        end
+        #### problem ######
+        
 
     end
 
@@ -57,9 +55,30 @@ class Batman::CLI
         
         batmanmovies = @batmanmovies[chosen_batman_movie - 1] 
         puts "\n#{@@mag}Here are the comics that inspired the plot of #{batmanmovies.titlename}#{@@white}"
+        puts "\n"
+        prompt_answer(chosen_batman_movie)
+        
 
-       
+    end
 
+    def prompt_answer(chosen_batman_movie)
+        if chosen_batman_movie == 1
+            puts list_comics_for_optionone
+        elsif chosen_batman_movie == 2
+            puts  Batman::Comics1989.all
+        elsif chosen_batman_movie == 3
+            puts Batman::Comics1992.all
+        elsif chosen_batman_movie == 4
+            puts Batman::Comics1995.all
+        elsif chosen_batman_movie == 5
+            puts Batman::Comics1997.all
+        elsif chosen_batman_movie == 6
+            puts Batman::Comics2005.all
+        elsif chosen_batman_movie == 7
+            puts Batman::Comics2008.all
+        elsif chosen_batman_movie == 8
+            puts Batman::Comics2012.all
+        end
     end
 
 #######################################################################
@@ -77,8 +96,7 @@ class Batman::CLI
         puts "\n"
         @optionone.each.with_index(1) { |comic, index| 
         puts "#{index}. #{comic}" }
-        puts "\n"  
- 
+        puts "\n"
 
     end
 
@@ -87,6 +105,10 @@ class Batman::CLI
 
         #list_comics_for_optionone
        # show_user_comics_for_optionone
+
+    end
+
+    def get_user_answer_for_comic
 
     end
 
