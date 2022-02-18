@@ -5,7 +5,7 @@ class Batman::Titles
     attr_accessor :titlename
 
     def initialize(titlename)
-        @titlename = titlename
+        @titlename = titlename 
         #@@all << self 
         save
     end
